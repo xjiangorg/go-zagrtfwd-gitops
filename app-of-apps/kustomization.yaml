@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  rhtap/gitops: go-zagrtfwd 
+  janus-idp.io/tekton: go-zagrtfwd
+  backstage.io/kubernetes-id: go-zagrtfwd
+  backstage.io/kubernetes-namespace: rhtap-app 
+  app.kubernetes.io/part-of: go-zagrtfwd
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml
